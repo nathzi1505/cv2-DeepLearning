@@ -5,12 +5,6 @@ from data import BaseTransform, VOC_CLASSES as label_map
 from ssd import build_ssd
 import imageio
 
-
-# Check if CUDA is available
-if torch.cuda.is_available():
-    torch.cuda.set_device(0)
-
-
 def detect(frame, net, transform):
     """Perform SSD detections"""
     height, width = frame.shape[:2]
